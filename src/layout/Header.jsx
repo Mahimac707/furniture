@@ -9,23 +9,23 @@ function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+      <header className="absolute top-3 left-8 right-8 z-50 bg-white/10 backdrop-blur-md rounded-[40px] shadow-md">
         <div className="flex items-center justify-between px-6 py-4">
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-2xl cursor-pointer"
+            className="text-2xl text-amber-950 cursor-pointer"
           >
             {isOpen ? '✕' : '☰'}
           </button>
 
           <Link to='/'>
-          <h className="text-xl font-bold tracking-wide text-gray-800">
+          <h1 className="text-2xl font-bold tracking-wide text-amber-950">
             Mahima Living
-          </h>
+          </h1>
           </Link>
 
-          <Link to="/contact" className="text-sm font-medium text-gray-700 hover:text-black">
+          <Link to="/contact" className="text-xl font-medium text-amber-950 hover:text-amber-400">
             Contact
           </Link>
 

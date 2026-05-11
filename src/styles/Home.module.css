@@ -1,0 +1,38 @@
+
+.heroContent {
+    background-image: url('/images/sofa2.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.Content {
+    color: #ffff;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: cursive;
+    text-align: center;
+    padding: 200px 50px;
+}
+
+.fadeItem {
+    opacity: 0;
+    animation: fadeInUp 5s ease-out forwards infinite;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px); 
+    }
+    40%{
+        opacity: 1;
+        transform: translate(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);  
+    }
+}

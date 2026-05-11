@@ -13,16 +13,12 @@ function App() {
     <BrowserRouter>
       <Header isOpen={isOpen} setIsOpen={setIsOpen} />
 
-      {/* wrapper for sidebar + content together */}
-      <div className="flex mt-16">
+      <div className="flex">
 
-        {/* Sidebar space holder */}
         <div
           className="transition-all duration-300 ease-in-out shrink-0"
           style={{ width: isOpen ? '250px' : '0px' }}
         />
-
-        {/* Main content */}
         <main className="flex-1 transition-all duration-300 ease-in-out">
           <Routes>
             <Route path='/' element={<Home />} />
