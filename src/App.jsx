@@ -11,6 +11,8 @@ function App() {
 
   return (
     <BrowserRouter>
+     
+
       <Header isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <div className="flex">
