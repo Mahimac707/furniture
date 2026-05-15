@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Header({ isOpen, setIsOpen }) {
   return (
     <>
-      <header className="absolute top-3 left-8 right-8 z-50 bg-white/10 backdrop-blur-md rounded-[40px] shadow-md"
+      <header className="fixed top-3 left-8 right-8 z-40  bg-white/10 backdrop-blur-md rounded-[40px] shadow-md"
       style={{
         left: isOpen ? '278px' : '32px',   // 260px sidebar + 18px gap
         right: '32px',

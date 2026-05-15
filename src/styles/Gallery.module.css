@@ -1,0 +1,125 @@
+.Search {
+    min-height: 50vh;
+    background: linear-gradient(160deg, #3b2a1a 0%, #5c4033 60%, #7a5c44 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem 2rem;
+    position: relative;
+  }
+  
+  .Search h1 {
+    color: #f5ece3;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .Search input[type='search'] {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 2px solid #a07850;
+    background: #fff8f2;
+    color: #3b2a1a;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+  }
+  .Search input[type='search']:focus {
+    border-color: #7a5c44;
+  }
+  
+  .Search button {
+    padding: 0.75rem 1.4rem;
+    border-radius: 8px;
+    border: none;
+    background: #a07850;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .Search button:hover {
+    background: #7a5c44;
+  }
+  
+  .suggestions {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #fff8f2;
+    border: 1.5px solid #c9a882;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 20;
+    box-shadow: 0 6px 18px rgba(60, 30, 10, 0.13);
+  }
+  
+  .suggItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.65rem 1rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #3b2a1a;
+    transition: background 0.15s;
+  }
+  .suggItem:hover {
+    background: #f0dfc8;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #a07850;
+    flex-shrink: 0;
+  }
+  
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .chips button {
+    padding: 0.4rem 1.1rem;
+    border-radius: 999px;
+    border: 1.5px solid #c9a882;
+    background: rgba(255, 248, 242, 0.13);
+    color: #f5ece3;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .chips button:hover {
+    background: #a07850;
+    border-color: #a07850;
+    color: #fff;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .Search {
+      padding: 2rem 1rem 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Search {
+      padding: 2rem 0.75rem 1.5rem;
+    }
+    .chips button {
+      font-size: 0.82rem;
+      padding: 0.35rem 0.9rem;
+    }
+  }

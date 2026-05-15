@@ -16,6 +16,7 @@ function App() {
       <Header isOpen={isOpen} setIsOpen={setIsOpen} />
 
       <div className="flex">
+      <main style={{ paddingTop: '80px' }}>
 
         <div
           className="transition-all duration-300 ease-in-out shrink-0"
