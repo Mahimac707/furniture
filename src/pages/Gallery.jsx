@@ -1,65 +1,108 @@
 import React, { useState } from 'react'
-import Styles from '../styles/Gallery.module.css'  
-
-const suggestion = [
-  'Bed', 'sofa', 'Table', 'Chair', 'Dinning table',
-  'Coffee Table', 'Showcase', 'Kitchen', 'Closet',
-]
+import { useDispatch, useSelector } from 'react-redux'
+import { setQuery, setResults, setLoading, setError } from '../redux/features/searchSlice'
+import { searchPhotos } from '../services/contentapi'
+import PhotoGrid from '../components/PhotoGrid'
+import Styles from '../styles/Gallery.module.css'
 
 const chips = [
-  'Bed', 'sofa', 'Table', 'Chair', 'Dinning table',
-  'Coffee Table', 'Showcase', 'Kitchen', 'Closet',
+  'Bed', 'Sofa', 'Table', 'Chair', 'Dining table',
+  'Coffee Table', 'Kitchen', 'Closet',
 ]
 
+const suggestions = chips
+
 function Gallery() {
-  const [query, setQuery] = useState('')
+  const dispatch = useDispatch()
+  const { query, results, loading, error } = useSelector((state) => state.search)
+
   const [showSugg, setShowSugg] = useState(false)
 
-  const filtered = suggestion.filter(s =>
+  const filtered = suggestions.filter((s) =>
     s.toLowerCase().includes(query.toLowerCase())
   )
 
-  const pickSugg = (val) => {
-    setQuery(val)
-    setShowSugg(false)  
+  const handleSearch = async (e) => {
+    e?.preventDefault()
+    if (!query.trim()) return
+
+    dispatch(setLoading())
+    try {
+      const photos = await searchPhotos(query)
+      dispatch(setResults(photos))
+    } catch (err) {
+      dispatch(setError(err.message))
+    }
+    setShowSugg(false)
+  }
+
+  const pickQuery = async (val) => {
+    dispatch(setQuery(val))
+    setShowSugg(false)
+    dispatch(setLoading())
+    try {
+      const photos = await searchPhotos(val)
+      dispatch(setResults(photos))
+    } catch (err) {
+      dispatch(setError(err.message))
+    }
   }
 
   return (
     <>
-      <div className={Styles.Search}>
-        <div className="relative py-25">
-          <h1>Choose & search your dream Item</h1>
-          <div  className="flex gap-2 w-full relative">
-          <input
-            type='search'
-            className="w-full"
-            placeholder='name the item you want'
-            value={query}
-            onChange={e => { setQuery(e.target.value); setShowSugg(true) }}
-            onFocus={() => setShowSugg(true)}
-            onBlur={() => setTimeout(() => setShowSugg(false), 150)}
-            autoComplete="off"
-          />
-          <button>Search</button>
-          </div>
-          {showSugg && query && filtered.length > 0 && (
-          <div className={Styles.suggestions}>
-            {filtered.map((s, i) => (
-              <div key={i} className={Styles.suggItem} onClick={() => pickSugg(s)}>
-                <span className={Styles.dot}></span> {s}
+      <form onSubmit={handleSearch}>
+        <div className={Styles.Search}>
+          <div className="relative py-25">
+            <h1>Choose & search your dream item</h1>
+
+            <div className="flex gap-2 w-full relative">
+              <input
+                type="text"
+                className="w-full"
+                placeholder="Name the item you want"
+                value={query}                          
+                onChange={(e) => {
+                  dispatch(setQuery(e.target.value))  
+                  setShowSugg(true)
+                }}
+                onFocus={() => setShowSugg(true)}
+                onBlur={() => setTimeout(() => setShowSugg(false), 150)}
+                autoComplete="off"
+              />
+              <button type="submit">Search</button>
+           
+
+            {showSugg && query && filtered.length > 0 && (
+              <div className={Styles.suggestions}>
+                {filtered.map((s, i) => (
+                  <div
+                    key={i}
+                    className={Styles.suggItem}
+                    onMouseDown={() => pickQuery(s)}
+                  >
+                    <span className={Styles.dot}></span> {s}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>  
-        )}
+            )}
+             </div>
 
-        <div className={Styles.chips}>
-          {chips.map((chip, i) => (
-            <button key={i} onClick={() => setQuery(chip)}>{chip}</button>
-          ))}
+            <div className={Styles.chips}>
+              {chips.map((chip, i) => (
+                <button
+                  key={i}
+                  type="button"              
+                  onClick={() => pickQuery(chip)}
+                >
+                  {chip}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
-        </div>
+      </form>
 
-      </div>  
+      <PhotoGrid photos={results} loading={loading} error={error} />
     </>
   )
 }
