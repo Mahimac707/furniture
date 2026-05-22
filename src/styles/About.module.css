@@ -1,0 +1,74 @@
+.container {
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(130deg,brown,chocolate);
+  }
+  
+  .title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #340202;
+  }
+  
+  .subtitle {
+    font-size: 2.5rem;
+    color: #f4efef;
+    margin-bottom: 3rem;
+  }
+  
+  .cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .card {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid brown;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .categorySection {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.categoryItem {
+    margin-bottom: 3rem;
+}
+
+.categoryTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    border-left: 4px solid #b5845a;
+    padding-left: 0.75rem;
+}
