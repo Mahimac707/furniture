@@ -10,7 +10,7 @@ export async function searchPhotos(query, page = 1) {
 
   const [unsplashRes] = await Promise.allSettled([
     fetch(
-      `https://api.unsplash.com/search/photos?query=${encodeURIComponent(furnitureQuery)}&per_page=20&page=${page}`,
+      `https://api.unsplash.com/search/photos?query=${encodeURIComponent(furnitureQuery)}&per_page=15&page=${page}`,
       { headers: { Authorization: `Client-ID ${UNSPLASH_KEY}` } }
     ),
   ])
@@ -35,5 +35,5 @@ export async function searchPhotos(query, page = 1) {
     photos = [...photos, ...mapped]
   }
 
-  return photos.slice(0, 10)
+  return photos.slice(0, 15)
 }

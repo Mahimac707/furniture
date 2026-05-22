@@ -53,7 +53,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 
         {/* Footer */}
         <div className="absolute bottom-6 left-0 right-0 text-center text-amber-950 text-sm">
-          © 2025 Mahima Living
+          © 2026 Mahima Living
         </div>
 
       </div>

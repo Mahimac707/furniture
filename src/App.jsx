@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Gallery from './pages/Gallery'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Footer from './layout/Footer'
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -29,8 +30,8 @@ function App() {
             <Route path='/contact' element={<Contact/>} />
           </Routes>
         </main>
-
       </div>
+      <Footer />
     </BrowserRouter>
   )
 }
