@@ -6,13 +6,12 @@ function Header({ isOpen, setIsOpen }) {
     <>
       <header className="fixed top-3 left-8 right-8 z-40  bg-white/10 backdrop-blur-md rounded-[40px] shadow-md"
       style={{
-        left: isOpen ? '278px' : '32px',   // 260px sidebar + 18px gap
+        left: isOpen ? '278px' : '32px',   
         right: '32px',
       }}
       >
         <div className="flex items-center justify-between px-6 py-4">
 
-          {/* Only hamburger — no ✕ here anymore */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-2xl text-amber-950 cursor-pointer hover:text-amber-600 transition-colors duration-200"

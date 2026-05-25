@@ -6,6 +6,7 @@ import Gallery from './pages/Gallery'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Footer from './layout/Footer'
+import Favourite from './pages/Favourite'
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -27,6 +28,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/gallery' element={<Gallery />} />
             <Route path='/about' element={<About />} />
+            <Route path='/favourite' element={<Favourite/>} />
             <Route path='/contact' element={<Contact/>} />
           </Routes>
         </main>

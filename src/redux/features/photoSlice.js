@@ -7,7 +7,7 @@ export const fetchPhotosByCategory = createAsyncThunk(
         try {
             const searchQuery = query === 'diningTable' ? 'dining table' : query;
             const results = await searchPhotos(searchQuery);
-            return { query, results: results.slice(0,8) };
+            return { query, results: results.slice(0,10) };
         } catch (error) {
             return rejectWithValue(error.message);
         }

@@ -45,15 +45,15 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
             className="flex items-center gap-3 text-white hover:text-amber-400 hover:bg-white/10 font-medium text-lg px-4 py-3 rounded-xl transition-all duration-200">
             ℹ️ <span>About</span>
           </Link>
-          <Link to="/cart" onClick={() => setIsOpen(false)}
+          <Link to="/favourite" onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 text-white hover:text-amber-400 hover:bg-white/10 font-medium text-lg px-4 py-3 rounded-xl transition-all duration-200">
-            🛒 <span>Cart</span>
+            ❤️ <span>Favourite</span>
           </Link>
         </nav>
 
         {/* Footer */}
         <div className="absolute bottom-6 left-0 right-0 text-center text-amber-950 text-sm">
-          © 2026 Mahima Living
+          &copy; {new Date().getFullYear()} Mahima Living
         </div>
 
       </div>

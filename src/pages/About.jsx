@@ -48,11 +48,13 @@ function About() {
                 {categories.map(({ key, label }) => (
                     <div key={key} className={Style.categoryItem}>
                         <h2 className={Style.categoryTitle}>{label}</h2>
-                        <PhotoGrid
+                        
+                        <PhotoGrid 
                             photos={photos[key]}
                             loading={loading}
                             error={error}
                         />
+                        
                     </div>
                 ))}
             </div>
