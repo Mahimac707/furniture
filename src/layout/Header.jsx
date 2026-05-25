@@ -10,7 +10,9 @@ function Header({ isOpen, setIsOpen }) {
         right: '32px',
       }}
       >
-        <div className="flex items-center justify-between px-6 py-4">
+        <div className="flex items-center justify-between px-6 py-4"
+        style={{textShadow:'2px 2px 6px #ffff'}}
+        >
 
           <button
             onClick={() => setIsOpen(!isOpen)}

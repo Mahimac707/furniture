@@ -33,7 +33,7 @@ function App() {
           </Routes>
         </main>
       </div>
-      <Footer />
+      <Footer isOpen={isOpen}/>
     </BrowserRouter>
   )
 }

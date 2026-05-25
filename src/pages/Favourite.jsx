@@ -31,7 +31,6 @@ function Favourite() {
                             </div>
                             <div className={Style.cardBody}>
                                 <p className={Style.photographer}>{photo.photographer}</p>
-                                <span className={Style.sourceBadge}>{photo.source}</span>
                             </div>
                             <button className={Style.removeBtn} onClick={() => remove(photo.id)}>
                                 🗑️ Remove

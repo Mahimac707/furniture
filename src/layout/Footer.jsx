@@ -1,9 +1,16 @@
 import React from 'react'
 
-function Footer() {
+function Footer({ isOpen }) {
   return (
-    <div className="bottom-0 left-0 right-0 text-center bg-amber-950 text-amber-50">
-      <p className="px-4 py-4">&copy; {new Date().getFullYear()} <bold>Mahima Living</bold>. All rights reserved</p>
+    <div
+      className="bottom-0 text-center bg-amber-950 text-amber-50 transition-all duration-300 ease-in-out"
+      style={{
+        marginLeft: isOpen ? '260px' : '0px',
+      }}
+    >
+      <p className="px-4 py-4">
+        &copy; {new Date().getFullYear()} <strong>Mahima Living</strong>. All rights reserved
+      </p>
     </div>
   )
 }

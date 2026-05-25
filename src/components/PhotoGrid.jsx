@@ -67,7 +67,6 @@ function PhotoGrid({ photos, loading, error }) {
 
             <div className={Styles.cardBody}>
               <p className={Styles.photographer}>{photo.photographer}</p>
-              <span className={Styles.sourceBadge}>{photo.source}</span>
             </div>
           </a>
         )
