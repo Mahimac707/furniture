@@ -58,8 +58,8 @@
     display: flex;
     gap: 50px;
     padding: 50px 25px;
-    color: darkblue;
-    font-size: 1.5rem;
+    color: #555;
+    font-size: 1.35rem;
     font-family: cursive;
     font-weight: bold;
     word-spacing: 0.20em;
@@ -84,19 +84,6 @@
     border-radius: 8px;
   }
 
-  .imageRow {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-  
-  .smallImg {
-    width: 200px;       
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
 
   @media (max-width: 768px) {
 
@@ -125,11 +112,6 @@
     .bigImg {
       height: 250px;          
     }
-  
-    .smallImg {
-      width: 120px;
-      height: 120px;
-    }
   }
   
   @media (max-width: 480px) {
@@ -154,10 +136,5 @@
 
     .bigImg {
       height: 180px;          
-    }
-  
-    .smallImg {
-      width: 90px;
-      height: 90px;
     }
   }
