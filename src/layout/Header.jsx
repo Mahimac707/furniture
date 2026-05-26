@@ -23,7 +23,7 @@ function Header({ isOpen, setIsOpen }) {
 
           <Link to='/'>
             <h1 className="text-2xl font-bold tracking-wide text-amber-950 transition-colors duration-200">
-              Mahima Living
+              Mahima Living❤️
             </h1>
           </Link>
 

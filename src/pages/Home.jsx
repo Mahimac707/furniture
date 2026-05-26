@@ -16,7 +16,7 @@ function Home() {
         Welcome to Mahima Living
       </h2>
       <button onClick={() => navigate('/gallery')} className={`${Styles.fadeItem} bg-black/40 text-sm  border-2 rounded-2xl px-3 py-2 cursor-grab 
-      tracking-widest transition-all duration-300 ease-in-out hover:bg-white hover:text-black`}>
+      active:scale-95 transition-transform duration-300 ease-in-out hover:bg-white hover:text-black`}>
         SHOP NOW 
       </button>
       </div>
@@ -40,7 +40,7 @@ function Home() {
       </p>
 
      <button onClick={()=> navigate('/contact')}
-     className="border-2 rounded-2xl bg-blue-600 text-amber-50 px-2 py-2 w-50 cursor-grab"
+     className="border-2 rounded-2xl bg-blue-600 text-amber-50 px-2 py-2 w-50 cursor-grab active:scale-95 transition-transform"
      >Get in Touch</button>
   </div>
 

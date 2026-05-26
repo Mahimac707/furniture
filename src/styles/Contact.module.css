@@ -14,7 +14,8 @@
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(6px) brightness(1.1);
-    transform: scale(1.05);   
+    transform: scale(1.05);
+    z-index: 0;
 }
 
 .container::after {
@@ -28,5 +29,90 @@
 .content {
     position: relative;
     z-index: 2;
-    padding: 8rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 8rem 6rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* ── Left ── */
+.left {
+    flex: 1;
+}
+
+.heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+.sub {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    border-left: 2px solid #6c63ff;   /* purple underline like screenshot */
+    padding-left: 0.75rem;
+}
+
+/* ── Right ── */
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.optBtn {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.4rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.6);
+    color: #1a1a1a;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    backdrop-filter: blur(4px);
+}
+
+.optBtn:hover {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #aaa;
+}
+
+.optActive {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #6c63ff;
+    color: #6c63ff;
+    font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        padding: 7rem 2rem 3rem;
+        gap: 2.5rem;
+    }
+
+    .right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 6rem 1.2rem 2rem;
+    }
+
+    .optBtn {
+        font-size: 0.88rem;
+        padding: 0.85rem 1rem;
+    }
 }

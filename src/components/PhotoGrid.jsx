@@ -61,13 +61,13 @@ function PhotoGrid({ photos, loading, error }) {
                 onClick={(e) => toggleFavourite(e, photo)}
                 title={isFav ? 'Remove from favourite' : 'Add to favourite'}
               >
-                ❤️
+               <i className="fa-solid fa-heart" style={{color: 'red'}}></i>
               </button>
             </div>
 
             <div className={Styles.cardBody}>
               <p className={Styles.photographer}>{photo.photographer}</p>
-            </div>
+            </div> 
           </a>
         )
       })}
