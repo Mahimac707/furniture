@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setQuery, setResults, setLoading, setError } from '../redux/features/searchSlice'
 import { searchPhotos } from '../services/contentapi'
@@ -13,6 +14,8 @@ const chips = [
 const suggestions = chips
 
 function Gallery() {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch()
   const { query, results, loading, error } = useSelector((state) => state.search)
 
@@ -102,7 +105,18 @@ function Gallery() {
         </div>
       </form>
 
-      <PhotoGrid photos={results} loading={loading} error={error} />
+      <PhotoGrid photos={results} loading={loading} error={error} /> 
+
+    
+      <div className="text-center px-6 py-6 bg-mist-300 flex flex-col gap-6 items-center">
+        <span className="text-5xl text-amber-950 font-medium">Ready to Take the Item?</span>
+        <p className="text-2xl text-mist-700">Availability for all our product and designs. Reserve your preferred dates today.</p>
+        <button onClick={() => navigate('/about')}
+        className="border rounded-2xl px-6 py-3  bg-amber-950 text-amber-50 cursor-grab active:scale-95 transition:transform"
+        >Start Your Journey</button>
+    </div>
+    
+      
     </>
   )
 }
