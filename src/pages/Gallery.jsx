@@ -5,6 +5,7 @@ import { setQuery, setResults, setLoading, setError } from '../redux/features/se
 import { searchPhotos } from '../services/contentapi'
 import PhotoGrid from '../components/PhotoGrid'
 import Styles from '../styles/Gallery.module.css'
+import Info from '../components/Info'
 
 const chips = [
   'Bed', 'Sofa', 'Table', 'Chair', 'Dining table',
@@ -108,7 +109,7 @@ function Gallery() {
       <PhotoGrid photos={results} loading={loading} error={error} /> 
 
     
-      <div className="text-center px-6 py-6 bg-mist-300 flex flex-col gap-6 items-center">
+      <div className="text-center border-t-6 border-amber-200 px-6 py-6 flex flex-col gap-6 items-center">
         <span className="text-5xl text-amber-950 font-medium">Ready to Take the Item?</span>
         <p className="text-2xl text-mist-700">Availability for all our product and designs. Reserve your preferred dates today.</p>
         <button onClick={() => navigate('/about')}
@@ -116,7 +117,7 @@ function Gallery() {
         >Start Your Journey</button>
     </div>
     
-      
+     <Info/> 
     </>
   )
 }

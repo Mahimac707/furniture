@@ -5,17 +5,18 @@ import Style from '../styles/Favourite.module.css'
 function Favourite() {
     const navigate = useNavigate()
     const [favourites, setFavourites] = useState(() => {
-        const saved = localStorage.getItem('favouritePhotos')  // ← fixed key
+        const saved = localStorage.getItem('favouritePhotos')  
         return saved ? JSON.parse(saved) : []
     })
 
     const remove = (id) => {
         const updated = favourites.filter(f => f.id !== id)
         setFavourites(updated)
-        localStorage.setItem('favouritePhotos', JSON.stringify(updated))  // ← fixed key
+        localStorage.setItem('favouritePhotos', JSON.stringify(updated))  
     }
 
     return (
+        <>
         <div className={Style.container}>
             <button className={Style.backBtn} onClick={() => navigate(-1)}>← Back</button>
             <h1 className={Style.title}>❤️ My Favourites</h1>
@@ -40,6 +41,8 @@ function Favourite() {
                 </div>
             )}
         </div>
+        <Info/>
+        </>
     )
 }
 

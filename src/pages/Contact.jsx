@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Info from '../components/Info'
 import Style from '../styles/Contact.module.css'
 
 const options = [
@@ -13,6 +14,7 @@ function Contact() {
   const [comment, setComment] = useState('')
 
   return (
+    <>
     <div className={Style.container}>
       <div className={Style.content}>
 
@@ -42,7 +44,10 @@ function Contact() {
         </div>
 
       </div>
+
     </div>
+    <Info/>
+    </>
   )
 }
 

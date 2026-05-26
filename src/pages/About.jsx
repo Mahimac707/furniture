@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Info from '../components/Info'
 import PhotoGrid from '../components/PhotoGrid'
 import { fetchPhotosByCategory } from '../redux/features/photoSlice'
 import Style from '../styles/About.module.css'
@@ -58,6 +59,7 @@ function About() {
                     </div>
                 ))}
             </div>
+            <Info/>
         </>
     )
 }

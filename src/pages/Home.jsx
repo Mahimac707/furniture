@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import Info from '../components/Info';
 import Styles from '../styles/Home.module.css'
 
 function Home() {
@@ -46,6 +47,7 @@ function Home() {
 
   </div>
 </div>
+ <Info/>
 
     </>
   )
