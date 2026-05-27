@@ -19,6 +19,12 @@ function Contact() {
 
   const handleSubmit =(e) => {
     e.preventDefault();
+    
+    if (!comment.trim()) {
+      setStatus("empty");
+      return;  
+    }
+
     setStatus("sending");
 
     emailjs.sendForm(
@@ -65,13 +71,14 @@ function Contact() {
           ))}
           <textarea 
            name='message'
+           required
            className="border rounded-2xl h-20 text-indigo-500 bg-white/50"
            placeholder='comment....'
            value={comment}
            onChange={(e) => setComment(e.target.value)}/>
 
-            {status === "success" && <p>Message sent!</p>}
-            {status === "error" && <p>something went wrong</p>}
+            {status === "success" && <p style={{ color: "green" }}>Message sent!</p>}
+            {status === "error" && <p style={{ color: "red" }}>something went wrong</p>}
 
           <button 
            type="submit"
