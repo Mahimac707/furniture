@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Info from '../components/Info'
 import Style from '../styles/Favourite.module.css'
 
 function Favourite() {
